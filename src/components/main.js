@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { auth} from "./firebase";
 // import AuthPage from "./AuthPage";
 import "../App.css";
-import Home from "./Home";
 import Left from "./Left";
 import Center from "./Center";
 import Right from "./Right";
@@ -23,11 +22,6 @@ function App() {
     localStorage.setItem("user", JSON.stringify(loggedInUser));
   };
 
-  // const handleLogout = () => {
-  //   setUser(null);
-  //   localStorage.removeItem("user");
-  // };
-  
   async function handleLogout() {
     try {
       await auth.signOut();
@@ -39,11 +33,6 @@ function App() {
   }
   return (
     <>
-      {/* {user ? (
-        
-      ) : (
-        <AuthPage onLogin={handleLogin} />
-      )} */}
       <div className="grid place-items-center mt-10">
           <div className="flex gap-10">
             <Left onLogout={handleLogout} />
